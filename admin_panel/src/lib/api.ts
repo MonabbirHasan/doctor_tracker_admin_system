@@ -13,7 +13,7 @@ export interface ApiErrorResponse {
 }
 
 const API_BASE_URL =
-"/api/auth/login";
+"/auth/login";
 
 const AUTH_ENDPOINTS_WITHOUT_REDIRECT = ["/auth/login", "/auth/seed-admin"];
 
