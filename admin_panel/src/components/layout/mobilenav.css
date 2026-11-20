@@ -1,0 +1,74 @@
+/* mobilenav.css */
+
+.mobilenav_backdrop_div {
+    background-color: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.mobilenav_drawer_aside {
+    background-color: var(--sidebar-background);
+    color: var(--sidebar-foreground);
+    border-right: 1px solid var(--sidebar-border);
+    box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.25);
+}
+
+.mobilenav_logo_div {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: var(--primary-foreground);
+    border-radius: var(--radius);
+}
+
+.mobilenav_link_a {
+    color: var(--sidebar-foreground);
+    border-radius: var(--radius);
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.mobilenav_link_a:hover:not(.mobilenav_link_active_a) {
+    background-color: var(--secondary);
+    color: var(--foreground);
+}
+
+.mobilenav_link_active_a {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--sidebar-primary);
+    font-weight: 600;
+}
+
+.mobilenav_quickcard_div {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.mobilenav_logoutbtn_button {
+    background-color: rgba(220, 38, 38, 0.08);
+    color: var(--destructive);
+    border: 1px solid rgba(220, 38, 38, 0.18);
+    border-radius: var(--radius);
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.mobilenav_logoutbtn_button:hover {
+    background-color: var(--destructive);
+    color: #ffffff;
+}
+
+.mobilenav_bottombar_nav {
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 24px -12px rgba(15, 23, 42, 0.12);
+}
+
+.mobilenav_bottomitem_a {
+    color: var(--muted-foreground);
+    border-radius: calc(var(--radius) - 0.25rem);
+    transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+.mobilenav_bottomitem_active_a {
+    color: var(--primary);
+    background-color: rgba(37, 99, 235, 0.08);
+    font-weight: 600;
+}

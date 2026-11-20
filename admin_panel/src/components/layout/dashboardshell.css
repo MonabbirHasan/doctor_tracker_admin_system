@@ -1,0 +1,20 @@
+/* dashboardshell.css */
+
+.dashboardshell_root_div {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+}
+
+.dashboardshell_body_div {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.dashboardshell_main_main {
+    flex: 1;
+    min-width: 0;
+}

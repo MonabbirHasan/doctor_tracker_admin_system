@@ -1,0 +1,78 @@
+/* DoctorsPage.css */
+
+.doctorspage_wrapper_div {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.doctorspage_card_div {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 0.25rem);
+  box-shadow: 0 4px 20px -8px rgba(15, 23, 42, 0.05);
+}
+
+.doctorspage_primarybtn_button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+  transition: background-color 0.18s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.doctorspage_primarybtn_button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 18px -4px rgba(37, 99, 235, 0.4);
+}
+
+.doctorspage_secondarybtn_button {
+  background-color: var(--card);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.doctorspage_secondarybtn_button:hover:not(:disabled) {
+  background-color: var(--secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.doctorspage_dangerbtn_button {
+  background-color: rgba(220, 38, 38, 0.08);
+  color: var(--destructive);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: calc(var(--radius) - 0.25rem);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.doctorspage_dangerbtn_button:hover:not(:disabled) {
+  background-color: var(--destructive);
+  color: #ffffff;
+}
+
+.doctorspage_specbadge_span {
+  background-color: rgba(37, 99, 235, 0.09);
+  color: var(--primary);
+}
+
+.doctorspage_cond_stable_span {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: var(--success);
+}
+
+.doctorspage_cond_monitoring_span {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+}
+
+.doctorspage_cond_critical_span {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--destructive);
+}
+
+.doctorspage_cond_recovering_span {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}

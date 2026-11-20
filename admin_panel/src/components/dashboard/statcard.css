@@ -1,0 +1,68 @@
+/* statcard.css */
+
+.statcard_card_div {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 0.25rem);
+    box-shadow: 0 4px 20px -8px rgba(15, 23, 42, 0.05);
+    transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.statcard_card_clickable_div:hover {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 10px 24px -10px rgba(15, 23, 42, 0.1);
+}
+
+.statcard_iconbox_div {
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statcard_iconbox_primary_div {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+}
+
+.statcard_iconbox_success_div {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: var(--success);
+}
+
+.statcard_iconbox_warning_div {
+    background-color: rgba(245, 158, 11, 0.12);
+    color: var(--warning);
+}
+
+.statcard_iconbox_destructive_div {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: var(--destructive);
+}
+
+.statcard_iconbox_neutral_div {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.statcard_trend_up_span {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: var(--success);
+}
+
+.statcard_trend_down_span {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: var(--destructive);
+}
+
+.statcard_trend_neutral_span {
+    background-color: var(--secondary);
+    color: var(--muted-foreground);
+}
+
+.statcard_skeleton_div {
+    background-color: var(--muted);
+    border-radius: calc(var(--radius) - 0.25rem);
+}

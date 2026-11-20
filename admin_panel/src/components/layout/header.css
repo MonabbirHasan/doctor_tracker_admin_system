@@ -1,0 +1,56 @@
+/* header.css */
+
+.header_bar_header {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header_iconbtn_button {
+    background-color: var(--background);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.header_iconbtn_button:hover {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.header_statusdot_span {
+    background-color: var(--success);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+}
+
+.header_profilecard_div {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.header_avatar_div {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: var(--primary-foreground);
+    border-radius: calc(var(--radius) - 0.25rem);
+}
+
+.header_logoutbtn_button {
+    background-color: rgba(220, 38, 38, 0.07);
+    color: var(--destructive);
+    border: 1px solid rgba(220, 38, 38, 0.18);
+    border-radius: var(--radius);
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.header_logoutbtn_button:hover {
+    background-color: var(--destructive);
+    color: #ffffff;
+}

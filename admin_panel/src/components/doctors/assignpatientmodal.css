@@ -1,0 +1,80 @@
+/* assignpatientmodal.css */
+
+.assignpatientmodal_backdrop_div {
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.assignpatientmodal_dialog_div {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 0.35rem);
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.22);
+}
+
+.assignpatientmodal_docbanner_div {
+  background-color: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: var(--radius);
+}
+
+.assignpatientmodal_field_input,
+.assignpatientmodal_field_select,
+.assignpatientmodal_field_textarea {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--input);
+  border-radius: var(--radius);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.assignpatientmodal_field_input:focus,
+.assignpatientmodal_field_select:focus,
+.assignpatientmodal_field_textarea:focus {
+  outline: none;
+  background-color: var(--card);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.assignpatientmodal_field_error_input,
+.assignpatientmodal_field_error_select,
+.assignpatientmodal_field_error_textarea {
+  border-color: var(--destructive);
+}
+
+.assignpatientmodal_field_error_input:focus,
+.assignpatientmodal_field_error_select:focus,
+.assignpatientmodal_field_error_textarea:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.assignpatientmodal_cancelbtn_button {
+  background-color: var(--card);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.assignpatientmodal_cancelbtn_button:hover:not(:disabled) {
+  background-color: var(--secondary);
+}
+
+.assignpatientmodal_submitbtn_button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+  transition: background-color 0.18s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.assignpatientmodal_submitbtn_button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 18px -4px rgba(37, 99, 235, 0.42);
+}
+
+.assignpatientmodal_submitbtn_button:active:not(:disabled) {
+  transform: scale(0.99);
+}
