@@ -2,6 +2,12 @@
 
 A full-stack **Doctor Tracker** application built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, **Zustand**, **React Hook Form + Zod**, and **Axios** on the frontend, paired with a **Node.js**, **Express (ES Modules)**, and **MongoDB (Mongoose)** MVC backend.
 
+Elevator Pitch
+
+Doctor Tracker is a full-stack clinical administration and patient caseload management platform built with Next.js App Router on the frontend and Node.js, Express, and MongoDB on the backend. It centralizes specialist doctor management, patient intake and assignment with search, condition, and date filters, and real-time dashboard analytics covering KPIs, growth trends, and per-doctor workloads behind JWT authentication and two-layer route protection.
+
+
+
 ---
 
 ## Key Features
