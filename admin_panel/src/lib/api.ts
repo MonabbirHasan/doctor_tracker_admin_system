@@ -13,7 +13,7 @@ export interface ApiErrorResponse {
 }
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://187.127.172.57:9000/api";
+"/api/auth/login";
 
 const AUTH_ENDPOINTS_WITHOUT_REDIRECT = ["/auth/login", "/auth/seed-admin"];
 
