@@ -116,3 +116,25 @@ Open `http://localhost:3000` in your browser and sign in via `/login`.
 - **Lowercase Snake Case UI Identifiers:** Custom CSS classes and component element identifiers follow `functionname_classname_element` (for example, `header_logoutbtn_button`, `patientspage_table_table`, `dashboardpage_wrapper_div`).
 - **Validation & Type Safety:** Form inputs are validated client-side with `zod` and `react-hook-form`, and API responses/requests are typed in `src/services/`.
 - **Clean Session Teardown:** Logging out clears Zustand state, removes persisted auth storage, expires `dt_auth_token`, and redirects to `/login`.
+
+
+
+## Screenshots
+
+### Admin Login
+![Admin Login](docs/screenshots/login_page.png)
+![Admin Login](docs/screenshots/login_page_mobile.png)
+
+### Admin Dashboard
+![Admin Dashboard](docs/screenshots/dashboard_page.png)
+![Admin Dashboard](docs/screenshots/dashboard_mobile.png)
+![Admin Dashboard](docs/screenshots/responsive_sidebar.png)
+
+### Doctors Management
+![Doctors Management](docs/screenshots/doctor_page.png)
+![Doctors Management](docs/screenshots/add_doctor.png)
+![Doctors Management](docs/screenshots/assign_patient.png)
+
+### Patients Management
+![Patients Management](docs/screenshots/patient_page.png)
+![Patients Management](docs/screenshots/add_patient.png)
