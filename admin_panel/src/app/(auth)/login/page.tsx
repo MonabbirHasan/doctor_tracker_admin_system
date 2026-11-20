@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -38,7 +38,11 @@ const AdminLoginPage = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+const [currentYear, setCurrentYear] = useState<number>(2026);
 
+useEffect(() => {
+  setCurrentYear(new Date().getFullYear());
+}, []);
   const {
     register,
     handleSubmit,
@@ -174,9 +178,9 @@ const AdminLoginPage = () => {
 
         {/* Footer Meta */}
         <div className="adminloginpage_brandfooter_div relative z-10 flex items-center justify-between text-xs text-blue-200/75 border-t border-white/15 pt-6">
-          <span className="adminloginpage_copyright_span">
-            &copy; {new Date().getFullYear()} Doctor Tracker System
-          </span>
+     <span className="adminloginpage_copyright_span">
+  &copy; {currentYear} Doctor Tracker System
+</span>
           <span className="adminloginpage_securitynote_span flex items-center gap-1.5">
             <Lock className="adminloginpage_footersvg_svg w-3.5 h-3.5" />
             End-to-End Encrypted Session

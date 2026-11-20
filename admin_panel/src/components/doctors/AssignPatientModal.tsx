@@ -50,19 +50,27 @@ interface AssignPatientModalProps {
 //=========================
 // PATIENT FORM VALIDATION
 //=========================
-const patientSchema: any = z.object({
+
+export const patientSchema: any = z.object({
     name: z
         .string()
         .trim()
         .min(2, "Patient full name must be at least 2 characters")
         .max(100, "Name is too long"),
-    age: z.coerce
-        .number({ invalid_type_error: "Age must be a number" })
-        .int("Age must be a whole number")
-        .min(0, "Age cannot be negative")
-        .max(130, "Please enter a valid age"),
+    age: z.preprocess(
+        (val) => {
+            if (val === "" || val === null || val === undefined) return NaN;
+            if (typeof val === "number") return val;
+            return Number(String(val).trim());
+        },
+        z
+            .number({ message: "Age must be a number" })
+            .int("Age must be a whole number")
+            .min(0, "Age cannot be negative")
+            .max(130, "Please enter a valid age")
+    ),
     gender: z.enum(["Male", "Female", "Other"], {
-        required_error: "Please select gender",
+        message: "Please select gender",
     }),
     phone: z
         .string()
@@ -76,10 +84,14 @@ const patientSchema: any = z.object({
         .optional()
         .or(z.literal("")),
     condition: z.enum(["Stable", "Monitoring", "Critical", "Recovering"], {
-        required_error: "Please select patient condition",
+        message: "Please select patient condition",
     }),
     admissionDate: z.string().min(1, "Please select an admission/visit date"),
-    notes: z.string().trim().max(500, "Notes must be under 500 characters").optional(),
+    notes: z
+        .string()
+        .trim()
+        .max(500, "Notes must be under 500 characters")
+        .optional(),
 });
 //=========================
 // DATE FORMATER

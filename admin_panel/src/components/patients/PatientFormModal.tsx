@@ -66,20 +66,26 @@ const DEFAULT_DOCTORS: DoctorOptionItem[] = [
     { id: "doc-2", name: "Dr. Tariqul Islam", specialization: "Neurology" },
     { id: "doc-3", name: "Dr. Nusrat Jahan", specialization: "Pediatrics" },
 ];
-
-const patientFormSchema = z.object({
+const patientFormSchema: any = z.object({
     name: z
         .string()
         .trim()
         .min(2, "Patient full name must be at least 2 characters")
         .max(100, "Name is too long"),
-    age: z.coerce
-        .number({ invalid_type_error: "Age must be a number" })
-        .int("Age must be a whole number")
-        .min(0, "Age cannot be negative")
-        .max(130, "Please enter a valid age"),
+    age: z.preprocess(
+        (val) => {
+            if (val === "" || val === null || val === undefined) return NaN;
+            if (typeof val === "number") return val;
+            return Number(String(val).trim());
+        },
+        z
+            .number({ message: "Age must be a number" })
+            .int("Age must be a whole number")
+            .min(0, "Age cannot be negative")
+            .max(130, "Please enter a valid age")
+    ),
     gender: z.enum(["Male", "Female", "Other"], {
-        required_error: "Please select gender",
+        message: "Please select gender",
     }),
     phone: z
         .string()
@@ -94,7 +100,7 @@ const patientFormSchema = z.object({
         .or(z.literal("")),
     doctorId: z.string().min(1, "Please assign a doctor"),
     condition: z.enum(["Stable", "Monitoring", "Critical", "Recovering"], {
-        required_error: "Please select patient condition",
+        message: "Please select patient condition",
     }),
     admissionDate: z.string().min(1, "Please select an admission/visit date"),
     notes: z
@@ -196,9 +202,9 @@ const PatientFormModal: React.FC<PatientFormModalProps> = ({
             initialData?.id
         );
     };
-//=========================
-// RENDER MAIL ELEMENT
-//=========================
+    //=========================
+    // RENDER MAIL ELEMENT
+    //=========================
     return (
         <div
             role="dialog"
@@ -393,8 +399,8 @@ const PatientFormModal: React.FC<PatientFormModalProps> = ({
                                     id="patient_record_doctor"
                                     {...register("doctorId")}
                                     className={`patientformmodal_field_select w-full pl-9 pr-3.5 py-2 text-sm ${errors.doctorId
-                                            ? "patientformmodal_field_error_select"
-                                            : ""
+                                        ? "patientformmodal_field_error_select"
+                                        : ""
                                         }`}
                                 >
                                     <option value="">Select a doctor...</option>
@@ -426,8 +432,8 @@ const PatientFormModal: React.FC<PatientFormModalProps> = ({
                                     id="patient_record_condition"
                                     {...register("condition")}
                                     className={`patientformmodal_field_select w-full pl-9 pr-3.5 py-2 text-sm ${errors.condition
-                                            ? "patientformmodal_field_error_select"
-                                            : ""
+                                        ? "patientformmodal_field_error_select"
+                                        : ""
                                         }`}
                                 >
                                     <option value="Stable">Stable</option>
@@ -459,8 +465,8 @@ const PatientFormModal: React.FC<PatientFormModalProps> = ({
                                 type="date"
                                 {...register("admissionDate")}
                                 className={`patientformmodal_field_input w-full pl-9 pr-3.5 py-2 text-sm ${errors.admissionDate
-                                        ? "patientformmodal_field_error_input"
-                                        : ""
+                                    ? "patientformmodal_field_error_input"
+                                    : ""
                                     }`}
                             />
                         </div>

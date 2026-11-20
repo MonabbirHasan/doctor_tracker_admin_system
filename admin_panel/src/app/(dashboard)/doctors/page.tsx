@@ -34,7 +34,7 @@ import DoctorFilters, {
     type DoctorFilterValues,
 } from "@/components/doctors/DoctorFilters";
 import DoctorFormModal, {
-    type EditableDoctorRecord,
+    type EditableDoctor as EditableDoctorRecord,
 } from "@/components/doctors/DoctorFormModal";
 import AssignPatientModal from "@/components/doctors/AssignPatientModal";
 
@@ -177,7 +177,7 @@ const DoctorsPage = () => {
   // ASSIGN PATIENT INTO DOCTOR
   //============================
      const handleAssignPatientSubmit = async (
-    payload: AssignPatientFormValues & { doctorId: string }
+    payload:  { doctorId: string }
 ) => {
     const cleanDoctorId =
         typeof payload.doctorId === "string" ? payload.doctorId.trim() : "";
@@ -189,7 +189,7 @@ const DoctorsPage = () => {
 
     setIsAssigningPatient(true);
     try {
-        const { doctorId, ...patientData } = payload;
+        const { doctorId, ...patientData }:any = payload;
         const createdPatient = await doctorService.assignPatient(
             cleanDoctorId,
             patientData
